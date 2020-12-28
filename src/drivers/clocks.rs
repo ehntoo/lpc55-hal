@@ -240,7 +240,8 @@ impl ClockRequirements {
         );
 
         // wait at least 6 ms for PLL to stabilize
-        crate::wait_at_least(6_000);
+        // crate::wait_at_least(6_000);
+        cortex_m::asm::delay(150000000 / 1000 * 6);
     }
 
     fn get_clock_source_and_div_for_freq(freq: Megahertz, pmc: &mut Pmc, syscon: &mut Syscon) -> (MainClock, u8) {

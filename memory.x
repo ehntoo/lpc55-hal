@@ -3,7 +3,8 @@ MEMORY
   FLASH : ORIGIN = 0x00000000, LENGTH = 512K
 
   /* for use with standard link.x */
-  RAM : ORIGIN = 0x20000000, LENGTH = 256K
+  /* RAM : ORIGIN = 0x20000000, LENGTH = 256K */
+  RAM : ORIGIN = 0x20000000, LENGTH = 48K
 
   /* would be used with proper link.x */
   /* needs changes to r0 (initialization code) */

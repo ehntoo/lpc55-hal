@@ -31,6 +31,13 @@ use crate::{
     },
 };
 
+extern "C" {
+    #[link(name = "power_hardabi")]
+    fn POWER_SetVoltageForFreq(
+        freq: cty::c_uint
+    );
+}
+
 // #[allow(unused_imports)]
 // use cortex_m_semihosting::{hprintln, dbg};
 
@@ -374,6 +381,7 @@ impl ClockRequirements {
         );
 
         let (main_clock, sys_divider) = Self::get_clock_source_and_div_for_freq(freq, pmc, syscon);
+        unsafe { POWER_SetVoltageForFreq(150_000_000) };
         Self::set_new_clock_source(freq, main_clock, sys_divider, syscon);
 
         unsafe { CONFIGURED = true };

@@ -39,6 +39,7 @@ usbd-serial = "0.1.0"
 vcell = "0.1.2"
 void = { version = "1", default-features = false }
 aligned = "0.3.2"
+cty = "0.2.1"
 # enum_dispatch = { git = "https://gitlab.com/antonok/enum_dispatch" }
 # salty = { path = "../salty", features = ["haase"] }
 
